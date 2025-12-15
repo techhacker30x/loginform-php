@@ -1,0 +1,94 @@
+/* --- 1. Variables & Reset --- */
+:root {
+    --bg-main: #050505; /* Deep Black */
+    --text-white: #ffffff;
+    --text-grey: #888888;
+    --accent: #00d4ff; /* Cyan */
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    background-color: var(--bg-main); 
+    color: var(--text-white); 
+    font-family: var(--font-main); 
+    line-height: 1.6;
+}
+
+/* --- 2. Navigation --- */
+.navbar {
+    display: flex; 
+    justify-content: flex-end; 
+    padding: 30px 10%;
+    position: absolute; 
+    width: 100%; top: 0; z-index: 100;
+}
+
+.nav-links { list-style: none; display: flex; gap: 40px; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-grey);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover { color: var(--text-white); }
+.contact-link { color: var(--accent) !important; }
+
+/* --- 3. Hero Section --- */
+.hero-section {
+    height: 100vh;
+    display: flex; 
+    align-items: center; 
+    padding-left: 15%; /* Left align */
+}
+
+.hero-content { max-width: 800px; }
+
+.intro-text {
+    font-size: 1.2rem; color: var(--accent); margin-bottom: 10px; font-weight: 500;
+}
+
+.hero-content h1 {
+    font-size: 5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 900; letter-spacing: -2px;
+}
+
+/* On mobile, make text smaller */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    .hero-section { padding-left: 10%; }
+}
+
+.accent-dot { color: var(--accent); }
+
+/* --- 4. Typewriter Effect --- */
+.typewriter-container {
+    font-size: 1.5rem; color: var(--text-grey); margin-bottom: 40px;
+    font-family: var(--font-mono);
+    height: 40px;
+}
+.txt-type > .txt { 
+    border-right: 2px solid var(--accent); 
+    padding-right: 5px; 
+    color: var(--text-white);
+    animation: blink 0.9s infinite; 
+}
+@keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: var(--accent); } }
+
+/* --- 5. Button --- */
+.btn-minimal {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-minimal:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0, 212, 255, 0.05);
+}
